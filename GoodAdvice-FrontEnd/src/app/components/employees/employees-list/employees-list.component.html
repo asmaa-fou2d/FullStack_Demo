@@ -1,0 +1,29 @@
+<button class="btn btn-black" (click)="goToCreate()">Create New Employee</button>
+
+<div class="row"></div>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">job Title</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Age</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.FullName}}</td>
+            <td>{{emp.Email}}</td>
+            <td>{{emp.JobTitle}}</td>
+            <td>{{emp.Salary}}</td>
+            <td>{{emp.Age}}</td>
+            <td>
+                <button type="button" (click)="goToUpdate(emp.Id)" class="btn btn-success">Edit</button> &nbsp;
+                <button type="button" (click)="deleteEmployee(emp.Id)"  class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+

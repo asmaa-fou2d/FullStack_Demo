@@ -1,0 +1,58 @@
+<div *ngIf="isLoaded">
+  <form [formGroup]="updateForm">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Email</label>
+        <input type="email" formControlName="email" class="form-control" placeholder="Email">
+        <small class="text-danger" *ngIf="isValid('email','required')">
+          Please enter employee email.
+        </small>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Full Name</label>
+        <input class="form-control" formControlName="fullName" placeholder="Full Name">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Job Title </label>
+        <input class="form-control" formControlName="jobTitle" placeholder="Job Title">
+        <small class="text-danger" *ngIf="isValid('jobTitle','required')">
+          Please enter employee job title.
+        </small>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Salary</label>
+        <input type="number" class="form-control" formControlName="salary" placeholder="Salary">
+        <small class="text-danger" *ngIf="isValid('salary','required')">
+          Please enter employee salary.
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Address</label>
+      <input type="text" class="form-control" formControlName="address" placeholder="1234 Main St">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-2">
+        <label>Age</label>
+        <input type="number" formControlName="Age" class="form-control">
+        <small class="text-danger" *ngIf="isValid('Age','required')">
+          Please enter employee age.
+        </small>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" formControlName="IsActive" type="checkbox">
+        <label class="form-check-label">
+          Active
+        </label>
+      </div>
+    </div>
+    <button type="submit" (click)="submit()" [disabled]="updateForm.invalid" class="btn btn-black">Update</button>
+  </form>
+
+</div>
